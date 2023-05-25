@@ -46,13 +46,13 @@ module.exports = {
     async update (req, res){
         try{
         const { id } = req.params;
-        const {CPF,Nome,Fidelidade,Telefone} = req.body;
+        const {cpf,nome,fidelidade,telefone} = req.body;
         const clienteUpdate = await Cliente.findOne({ _id:id});
 
-            clienteUpdate.CPF = CPF;
-            clienteUpdate.Fidelidade = Fidelidade;
-            clienteUpdate.Nome = Nome;
-            clienteUpdate.Telefone = Telefone;
+            clienteUpdate.cpf = cpf;
+            clienteUpdate.fidelidade = fidelidade;
+            clienteUpdate.nome = nome;
+            clienteUpdate.telefone = telefone;
 
         await clienteUpdate.save();
     return res.json(clienteUpdate);

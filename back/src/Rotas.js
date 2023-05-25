@@ -12,4 +12,6 @@ rotas.get('/BancoV',VendaControler.read);
 rotas.post('/BancoV', VendaControler.create);
 rotas.delete('/BancoV/:id',VendaControler.delete);
 rotas.post('/BancoV/:id',VendaControler.update);
+
+rotas.get('./front')
 module.exports = rotas;
