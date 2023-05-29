@@ -1,7 +1,8 @@
 const express = require("express");
 const rotas = express.Router();
+
 const ClienteControler = require("./Controller/ClienteController");
-const VendaControler = require("./Controller/VendaController")
+const VendaControler = require("./Controller/VendaController");
 const FormController = require("./Controller/FormController");
 rotas.get('/BancoC',ClienteControler.read);
 rotas.post('/BancoC',ClienteControler.create);
@@ -15,6 +16,6 @@ rotas.post('/BancoV/:id',VendaControler.update);
 
 
 
-rotas.get('/front', FormController.registro)
-rotas.get('/reg');
+rotas.get('/front', FormController.registro);
+rotas.post('/reg', FormController.register);
 module.exports = rotas;
